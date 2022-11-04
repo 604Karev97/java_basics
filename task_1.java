@@ -1,11 +1,15 @@
 class Solution {
-    public int removeElement(int[] nums, int val) {
+    public double myPow(double x, int n) {
         int count = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != val) {
-                nums[count++] = nums[i];
-            }
+        double rez = 1;
+        if (n > 0) {
+            while (count++ < n) rez *= x;
         }
-        return count;
+        if (n < 0) {
+            while (count-- > n) rez /= x;
+        }
+        if (n == 0) rez = 1;
+        
+        return rez;
     }
 }
